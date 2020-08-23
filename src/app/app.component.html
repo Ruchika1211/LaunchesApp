@@ -1,0 +1,80 @@
+<section class="container bg-light">
+  <div class="page-header">
+    <h2>SpaceX Launch Program</h2>
+  </div>
+
+
+  <!-- <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div> -->
+  <div class="row">
+    <div class="card col-2 col-sm-12 col-md-3 col-lg-3 col-xl-2 cmt-2 ml-2 mr-4 remPadding">
+
+      <div class="card-body remPadding">
+        <h4 class="col-12 remPadding ml-1">Filter</h4>
+        <div class="row pl-5 pr-4" *ngFor="let filter of filterData">
+          <p class="col-12 remPadding filterHead "> {{filter.title}}</p>
+          <div class="col-12 row ">
+
+            <button type="button" class="btn btn-primary filterText btn-sm col-4 m-2 remPadding " [ngClass]="findActiveClass(filter.filterId,data) ? 'SelOne':'notSel'"
+              (click)="filterApplied(data,filter.filterId)" *ngFor="let data of filter.values">{{data}}</button>
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+    <ng-container *ngIf="launches ;else noResult">
+      <div class="col-9 col-sm-12 col-md-7 col-lg-7 col-xl-9 remPadding">
+        <div class="row ">
+
+          <div class="card col-sm-12 col-md-4 col-lg-5 col-xl-2  ml-3 mr-3 mt-2 pl-2 pr-2" *ngFor="let launch_data of launches; let i = index">
+            <img [src]="launch_data?.links?.mission_patch_small " class="card-img-top bg-light mt-3" alt="...">
+            <div class="card-body pb-0 remPadding">
+
+              <div class="card-text row">
+                <h5 class="cardHeader col-12">{{launch_data.mission_name}}#{{i+1}}</h5>
+                <h5 class="cardHeader col-12">Mission ids</h5>
+                <p class="col-12 cardText ml-2" *ngFor="let l_id of launch_data.mission_id">. {{l_id}}</p>
+                <p class=" col-8 cardHeader  ">Launch Year:</p>
+                <p class=" col-4 cardText  ">{{launch_data.launch_year}}</p>
+                <p class="cardHeader col-8 pr-0">Successful Launch</p>
+                <p class="cardText col-4 pl-0">{{launch_data.launch_success}}</p>
+                <p class="cardHeader col-8 pr-0">Successful Landing</p>
+                <p class="cardText col-4 pl-0 ">{{launch_data.rocket.first_stage.cores[0].land_success}}</p>
+
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="text-center devlop mb-2">Developed by: Ruchika Sharma</div>
+    </ng-container>
+
+    <ng-template #noResult>
+      No Result Found
+    </ng-template>
+
+
+
+
+
+
+
+  </div>
+  <!-- <nav class="navbar .text-center fixed-bottom navbar-light bg-light">
+    <div class="text-center devlop">Developed by: Ruchika Sharma</div>
+  </nav> -->
+</section>
