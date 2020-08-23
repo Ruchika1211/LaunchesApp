@@ -1,27 +1,32 @@
-# AngularUniversalExample
+# Assignment Requirements Status: 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Server-Side Rendering
+Functionalities
+The initial launch programs landing page has to be server side rendered.
+A boilerplate to implement the Server-side rendering can be used.
 
-## Code scaffolding
+---->Done using angular cli package angular universal
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## “Build and Packaging”
+Functionalities
+Build should have basic set of static code quality checks and should fail the build if there is any error.
 
-## Build
+-->For this we can use Linting which is inbuilt in angular cli.All you have to do is while building the application add ng. 
+lint plus the build command.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## “Client Side”
+Functionalities
+User should be able to Filter the results with help of provided Filters.
+Filter options are hard coded with the values shown in the visual comp below.
+Applying any Filter should reflect the below changes:
+Selected filter should change to selected state as shown in the visual comp.
+Applied filters should change the URL and update the Page with latest records without refreshing the page.
+If the page is refreshed with the applied filters in the URL – the resulting page should be server side rendered & subsequent filters should again be client side rendered.
 
-## Running unit tests
+-->Completed Please refer the screenshot
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Responsive Design and other UI elements-->for this i have used bootstrap to make the page responsive
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
